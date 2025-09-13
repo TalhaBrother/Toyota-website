@@ -308,7 +308,8 @@ body {
 }
 .banner {
   width: 100%;
-  height: 400px; /* adjust as you like */
+  height:40vh ; /* adjust as you like */
+  /* min-height: 400px; */
   overflow: hidden;
   position: relative;
 }
@@ -321,8 +322,8 @@ body {
 
 .banner .slides img {
   width: 100%;
-  height: 400px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -337,7 +338,11 @@ body {
 
 
 /* Responsive Design */
-
+@media (max-width:1350px){
+  /* .banner{
+    height: 30vh;
+  } */
+}
 @media (max-width: 900px) {
   .car1, .car2 {
     width: 100%;      /* full width on small screens */
@@ -356,6 +361,9 @@ body {
     margin-left: 0;    /* reset margin */
     padding: 1rem;     /* reduce padding */
   }
+    /* .banner{
+    height: 20vh;
+  } */
 }
 
 @media (max-width: 900px) {
@@ -386,3 +394,91 @@ body {
     text-align: center;
   }
 }
+@media (max-width:600px){
+  /* .banner{
+    height: 15vh;
+  } */
+ .row1 {
+    max-width: 100%;
+    padding: 10px;
+    overflow: visible;   /* important so the active slide height is not clipped */
+  }
+
+  /* keep slides absolutely stacked (hidden) by default, but
+     make them column flex so it's easy to switch layout for active slide */
+  .row1 .car1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: none;            /* disable scale jump on small screens */
+    display: flex;
+    flex-direction: column;     /* default to column helps consistency */
+    align-items: stretch;
+    gap: 12px;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  /* the visible slide becomes part of the document flow and stacks content vertically */
+  .row1 .car1.active {
+    position: relative;         /* now contributes to parent height */
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    display: flex;
+    flex-direction: column;     /* image on top, details below */
+    align-items: stretch;
+  }
+
+  /* make image full width (on top) */
+  .row1 .car1 img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    order: 0;
+  }
+
+  /* details below the image, reset negative margin */
+  .row1 .car1 .detail1 {
+    order: 1;
+    margin-left: 0;             /* remove the -1rem which caused overlap */
+    padding: 0.9rem;
+    text-align: center;
+    background-color: white;
+    color: #000;
+  }
+  .slg1{
+    display: none;
+  }
+  .exp1{
+    color: #EB0A1E;
+  }
+.ln1{
+  background-color: #000;
+  font-weight: bold;
+}
+
+  /* ensure cards don't have fixed heights */
+  .car1, .car2 {
+    width: 100%;
+    height: auto;
+  }
+
+  /* reduce transition complexity on small screens to avoid jumps */
+  .row1 .car1 {
+    transition: opacity 0.35s ease;
+  }
+
+
+}
+/* @media (max-width:375px){
+  .banner{
+    height: 10vh;
+  }
+} */
