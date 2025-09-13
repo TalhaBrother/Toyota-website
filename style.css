@@ -1,270 +1,388 @@
-*{
-    margin: 0%;
-    padding: 0%;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.welcome{
-    color: white;
-    background: black;
-    text-align: center;
-    padding: 10px 10px;
+body {
+  background-color: #fff;
+  color: #000;
+  line-height: 1.5;
 }
 
-.logo{
-    height: 60px;
-    width: 60px;
-    padding: 20px 20px;
-    padding-left: 100px;
-}
-.navbar ol li{
-   display: inline-block;
-
-}
-.opt{
-    padding-left: 40px;
-    cursor: pointer;
-}
-.navbar{
-    display: flex;
+/* Welcome Bar */
+.welcome {
+  background: #EB0A1E;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
 }
 
-.options{
-    padding: 40px 40px;
-    padding-left: 300px;
-}
-.banner{
-    width: 100vh;
-}
-body{
-    font-family: sans-serif;
-    font-weight: 540;
-}
-.branding{
-    padding-top: 80px;
-    text-align: center;
-    padding-bottom: 40px;
-}
-.slogan{
-    padding-top: 20px;
-}
-.select{
+/* Navbar */
+/* .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #fff;
+  border-bottom: 2px solid #f5f5f5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+} */
 
-    text-align: center;
-    padding-top: 30px ;
-    padding-bottom: 30px;
-    
+.navbar .logo {
+  height: 50px;
 }
-.select ol li{
-    display: inline;
-    padding: 20px;
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff; /* Toyota theme */
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.img1{
-    height: 250px;
-    width: 300px;
+
+/* Menu options */
+.navbar .options {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
-.car1{
-    display: flex;
-    align-items: center;
-    padding-left: 40px;
-    
+
+.navbar .options li {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;   /* hidden on desktop */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar .options li:hover {
+  color: #EB0A1E;
+}
+
+/* Hamburger Menu (Hidden on Desktop) */
+/* .hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+} */
+
+/* Banner */
+/* .banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+} */
+
+/* Branding */
+.branding {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.branding h1 {
+  color: #EB0A1E;
+}
+
+.branding .slogan {
+  color: #333;
+}
+
+/* Select Section */
+.select {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.select ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.select li {
+  background: #f5f5f5;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select li:hover {
+  background: #EB0A1E;
+  color: #fff;
+}
+
+/* Car Cards */
+.row1, .row2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 .detail1{
-    background: black;
-    color: white;
-    height:220px;
-    width: 280px;
-    border-radius: 3px;
-
+   flex: 1;                /* take remaining 60% */
+  background-color: #262626;
+  color: white;
+  padding: 1.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -1rem;
 }
 .name1{
-    padding-top: 20px;
-    padding-left: 15px;
+  font-weight: 500;
 }
 .start1{
-    padding-top: 20px;
-    padding-left: 15px;
-}
-.slg1{
-    padding-left: 15px;
-}
-.exp1{
-    text-align: center;
-    padding-top: 20px;
-    cursor: pointer;
+  margin-top: 1.5rem;
 }
 .pkr1{
-    padding-left: 15px;
+  font-weight: bold;
 }
-.ln1{
-    margin-top: 10px;
-    width: 200px;
-    margin-left: 40px;
-    border-radius: 50px;
-  
+.exp1{
+  margin-top: 0.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
-.row1{
-    display: flex;
+.car1, .car2 {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 50%;
+  height: 300px;
+  transition: transform 0.3s ease;
+  display: flex;
+  gap: 15px;              /* space between image and details */
+  align-items: stretch;   /* both take full height */
+  flex-wrap: wrap;
+
+
+}
+
+.car1:hover, .car2:hover {
+  transform: translateY(-5px);
+}
+
+.car1 img, .car2 img {
+  flex: 0 0 40%;          /* 40% of container, no grow */
+  max-width: 40%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0;
+  object-fit: cover;
+}
+.row1 {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* optional, keep slider width */
+  margin: auto;
+  overflow: hidden;
+}
+
+.row1 .car1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: scale(0.95); /* start slightly smaller */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+.row1 .car1.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  position: relative;
+}
+
+
+
+/* Location Row */
+.row3 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px;
+  flex-wrap: wrap;
+}
+
+.location {
+  text-align: center;
+  width: 200px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.location:hover {
+  transform: translateY(-5px);
+}
+
+.location img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/* More Section */
+.more {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f5f5f5;
+}
+
+/* Sales Row */
+.row4 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+}
+
+.sales {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.sales:hover {
+  transform: translateY(-5px);
+}
+
+.sales img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.row5 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  background: #000;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.row5 h4 {
+  color: #EB0A1E;
+  margin-bottom: 10px;
+}
+
+.row5 p, .row5 li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.row5 .line {
+  border: none;
+  height: 1px;
+  background: #444;
+  margin: 10px 0;
+}
+.banner {
+  width: 100%;
+  height: 400px; /* adjust as you like */
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .slides {
+  position: relative;  /* contains absolutely positioned images */
+  width: 100%;
+  height: 100%;
+}
+
+.banner .slides img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;             /* hide all images */
+  transition: opacity 1s ease-in-out;
+}
+
+.banner .slides img.active {
+  opacity: 1;             /* show only active image */
+}
+
+
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+  .car1, .car2 {
+    width: 100%;      /* full width on small screens */
+    flex-wrap: nowrap; /* force side by side (no wrapping) */
+    height: auto;      /* let height adjust naturally */
+  }
+
+  .car1 img, .car2 img {
+    flex: 0 0 45%;     /* image takes ~45% */
+    max-width: 45%;
+    height: auto;      /* keep proportions */
+  }
+
+  .detail1 {
+    flex: 1;           /* details take the rest */
+    margin-left: 0;    /* reset margin */
+    padding: 1rem;     /* reduce padding */
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;  /* show hamburger */
+   
+  }
+
+  .navbar .options {
+    display: none;  /* hide menu by default */
+    position: absolute;
+    top: 60px;  /* just below navbar */
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 15px;
     padding: 20px;
-}
-.img2{
-    height: 300px;
-    width: 400px;
-    padding: 0px;
-}
-.row2{
-    display: flex;
-   
-}
-.img3{
-    height: 220px;
-    width: 320px;
-    padding: 0px;
-}
-.img4{
-    height: 200px;
-    width: 300px;
-    padding: 0px;
-}
-.car2{
-    display: flex;
-    align-items: center;
-    padding-left:40px ;
-    
-}
-.row3{
-    display: flex;
-    padding-top: 100px;
-    
-}
-.location{
-    display: flex;
-    padding-top: 100px;
-    padding-left: 45px;
-    padding-right: 45px;
-    padding-bottom: 100px;
-   
-   
-}
-.location img{
-    height: 64px;
-    width: 64px;
-    background-color: white;
-    padding: 15px;
-    border: 2px solid black;
-}
-.location p{
-   
-    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  .navbar .options.active {
+    display: flex;  /* show when active */
+  }
   
-    background-color: black;
-    color: white;
-    height: 50px;
-    width: 100px;
-    font-size: 20px;
-    cursor: pointer;
-}
-.more{
+  .row5 {
+    grid-template-columns: 1fr;
     text-align: center;
-    padding: 100px 100px;
+  }
 }
-.more p{
-    padding-top: 15px;
-    font-weight: bold;
-}
-.row4{
-    display: flex;
-    
-    
-}
-.sales{
-    width: 250px;
-    height: 200px;
-    margin-left: 70px;
-   
-}
-.sales img{
-    width: 250px;
-    height: 280px;
-
-}
-.sales h4{
-    font-size: 24px;
-    text-align: center;
-    padding: 30px 30px;
-   
-}
-.sales p{
-    text-align: center;
-
-}
-.ln2{
-    margin-top: 10px;
-    width: 200px;
-    margin-left: 40px;
-    border-radius: 50px;
-    color: black;
-  
-}
-.read{
-    padding-top: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.row5{
-    margin-top: 450px;
-    padding-bottom: 30%;
-    width: 100%;
-    height: 100px;
-    background-color: rgb(52, 50, 50);
-    display: flex;
-}
- .motor h4{
-    color: white;
-    padding-top: 100px;
-    padding-left: 50px;
-}
-.motor p{
-    color: rgb(135, 134, 134);
-    padding-top: 20px;
-    padding-left: 50px;
-    padding-bottom: 50px;
-   
-    
-}
-.motor .line{
-    color:  rgb(135, 134, 134);
-    margin-left: 50px;
-    width: 300px;
-    
-}
-.showroom{
-    padding-top: 30px;
-    padding-left: 50px;
-}
-.showroom h4{
-    color: white;
-    padding: 20px;
-}
-.showroom p{
-    color:  rgb(135, 134, 134);
-    padding-left: 20px;
-
-}
-.Aftsale{
-padding-top: 30px;
-padding-left: 50px;
-}
-.Aftsale h4{
-    color: white;
-    padding: 20px;
-}
-.Aftsale p{
-    color:  rgb(135, 134, 134);
-    padding-left: 20px;
-}
-
-
-
