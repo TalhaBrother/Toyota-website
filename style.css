@@ -10,15 +10,24 @@ body {
   background-color: #fff;
   color: #000;
   line-height: 1.5;
+ 
+  
+ 
+}
+.header{
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 /* Welcome Bar */
 .welcome {
-  background: #EB0A1E;
+  background: #333;
   color: #fff;
   text-align: center;
   padding: 8px;
   font-size: 14px;
+
 }
 
 /* Navbar */
@@ -45,6 +54,7 @@ body {
   background: #fff; /* Toyota theme */
   padding: 10px 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
 }
 
 /* Menu options */
@@ -67,8 +77,15 @@ body {
 }
 
 .navbar .options li:hover {
-  color: #EB0A1E;
+  color:#EB0A1E;
+ 
 }
+.content{
+  padding-top: 100px;
+}
+/* .banner{
+  margin-top: 100px;
+} */
 
 /* Hamburger Menu (Hidden on Desktop) */
 /* .hamburger {
@@ -93,7 +110,7 @@ body {
 }
 
 .branding h1 {
-  color: #EB0A1E;
+  color:  #333;
 }
 
 .branding .slogan {
@@ -291,13 +308,14 @@ body {
 }
 
 .row5 h4 {
-  color: #EB0A1E;
+  color:white;
   margin-bottom: 10px;
 }
 
 .row5 p, .row5 li {
   font-size: 14px;
   margin-bottom: 8px;
+  color: grey;
 }
 
 .row5 .line {
@@ -318,6 +336,10 @@ body {
   position: relative;  /* contains absolutely positioned images */
   width: 100%;
   height: 100%;
+}
+.read{
+  color: #EB0A1E;
+  font-size: small;
 }
 
 .banner .slides img {
